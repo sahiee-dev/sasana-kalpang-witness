@@ -1,0 +1,77 @@
+{
+  "cli": "sasana verify X_in.v2b_rechain_seal_untouched.jsonl --json --trust-key <KEY_A>",
+  "exit_code": 1,
+  "result": {
+    "status": "COMPROMISED",
+    "evidence_class": "NO_EVIDENCE",
+    "exit_code": 1,
+    "session_id": "witness-x-in-run1",
+    "event_count": 5,
+    "log_drop_count": 0,
+    "root_hash": "d4ae1bddeb8af00a126bf75ed3ae85c0f529df6499df9a4534c1b223f2244faf",
+    "errors": [
+      "seq=5: prev_hash chain broken",
+      "CHAIN_SEAL session_hash does not match the preceding event's event_hash (seal says bc375bdcd6b881fa\u2026, chain head is 96cef736f4f2c060\u2026)"
+    ],
+    "warnings": [],
+    "canonicalization": "jcs-rfc8785",
+    "pinned": true,
+    "require_seal": false,
+    "strict": false,
+    "seal_present": true,
+    "seal_trusted": false,
+    "timestamp": {
+      "status": "SKIPPED",
+      "imprint_match": false,
+      "verified": false,
+      "claimed_time_utc": null,
+      "detail": null,
+      "errors": []
+    },
+    "timestamp_verified": false,
+    "checks": {
+      "structural": {
+        "status": "PASS",
+        "errors": []
+      },
+      "sequence": {
+        "status": "PASS",
+        "errors": []
+      },
+      "hash_chain": {
+        "status": "FAIL",
+        "errors": [
+          "seq=5: prev_hash chain broken"
+        ]
+      },
+      "completeness": {
+        "status": "PASS",
+        "has_session_start": true,
+        "has_session_end": true,
+        "has_chain_seal": true,
+        "log_drop_count": 0,
+        "errors": []
+      },
+      "seal_signature": {
+        "status": "FAIL",
+        "errors": [
+          "CHAIN_SEAL session_hash does not match the preceding event's event_hash (seal says bc375bdcd6b881fa\u2026, chain head is 96cef736f4f2c060\u2026)"
+        ],
+        "seal_present": true,
+        "seal_trusted": false
+      },
+      "session_signatures": {
+        "status": "SKIPPED",
+        "errors": []
+      },
+      "rfc3161_timestamp": {
+        "status": "SKIPPED",
+        "errors": [],
+        "timestamp_utc": null,
+        "detail": null
+      }
+    },
+    "verifier_version": "2.0.0"
+  },
+  "stderr": null
+}

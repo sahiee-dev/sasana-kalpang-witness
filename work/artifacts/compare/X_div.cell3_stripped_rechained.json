@@ -1,0 +1,11 @@
+{
+  "log": "X_div.cell3_stripped_rechained.jsonl",
+  "fresh_read": "fresh_pre_edit.json",
+  "record_claims": "IN-BOUNDS",
+  "fresh_classification": "DIVERGENT",
+  "flagged": true,
+  "flags": {
+    "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+    "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+  }
+}

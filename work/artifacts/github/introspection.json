@@ -1,0 +1,15 @@
+{
+  "http": 200,
+  "errors": null,
+  "mutations_matching": [],
+  "types_matching": [
+    "CommitHistoryConnection",
+    "PullRequestRevisionMarker",
+    "RepositoryCustomPropertyValuesEditableBy",
+    "SponsorsListingFeaturedItem",
+    "SponsorsListingFeaturedItemFeatureableType",
+    "UserContentEdit",
+    "UserContentEditConnection",
+    "UserContentEditEdge"
+  ]
+}

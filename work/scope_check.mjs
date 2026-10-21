@@ -1,0 +1,13 @@
+const t = process.env.GITHUB_PERSONAL_ACCESS_TOKEN;
+const h = { Authorization: `Bearer ${t}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+const get = async (p) => { const r = await fetch('https://api.github.com' + p, { headers: h }); let j = null; try { j = await r.json(); } catch {} return { status: r.status, j, perms: r.headers.get('x-accepted-github-permissions') }; };
+const fx = await get('/repos/sahiee-dev/kalpang-fixture');
+console.log('fixture repo:', fx.status, fx.j?.full_name, 'private=', fx.j?.private, 'permissions=', JSON.stringify(fx.j?.permissions));
+const iss = await get('/repos/sahiee-dev/kalpang-fixture/issues/1');
+console.log('fixture issue #1:', iss.status, iss.j?.title, 'state=', iss.j?.state, 'comments=', iss.j?.comments);
+const priv = await get('/repos/sahiee-dev/sasana-kalpang-witness');
+console.log('private witness repo (must be 404/403):', priv.status);
+const lst = await get('/user/repos?per_page=100');
+console.log('/user/repos:', lst.status, Array.isArray(lst.j) ? lst.j.map(r => r.full_name) : lst.j?.message);
+const pub = await fetch('https://api.github.com/repos/sahiee-dev/Sasana/issues/1/comments', { method: 'POST', headers: h, body: '{}' });
+console.log('write probe on other repo with empty body (must be 403/404, not 422):', pub.status);

@@ -1,0 +1,8 @@
+{
+  "log": "session_sealed.original.jsonl",
+  "fresh_read": "fresh_pre_edit.json",
+  "record_claims": "DIVERGENT",
+  "fresh_classification": "DIVERGENT",
+  "flagged": false,
+  "flags": {}
+}

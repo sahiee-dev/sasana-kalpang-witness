@@ -1,0 +1,8 @@
+{
+  "log": "session_sealed.original.jsonl",
+  "fresh_read": "fresh_pre_edit.json",
+  "record_claims": "IN-BOUNDS",
+  "fresh_classification": "IN-BOUNDS",
+  "flagged": false,
+  "flags": {}
+}

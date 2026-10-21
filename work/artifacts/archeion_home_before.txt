@@ -1,0 +1,1 @@
+before: drwxr-xr-x  3 lulu  staff  96 13 Jun 14:02 /Users/lulu/.archeion

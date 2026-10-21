@@ -1,0 +1,11 @@
+{
+  "log": "X_in.v2_rechain_keep_seal.jsonl",
+  "fresh_read": "fresh_pre_edit.json",
+  "record_claims": "DIVERGENT",
+  "fresh_classification": "IN-BOUNDS",
+  "flagged": true,
+  "flags": {
+    "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+    "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+  }
+}

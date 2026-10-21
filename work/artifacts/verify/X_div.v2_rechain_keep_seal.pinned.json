@@ -1,0 +1,74 @@
+{
+  "cli": "sasana verify X_div.v2_rechain_keep_seal.jsonl --json --trust-key <KEY_A>",
+  "exit_code": 1,
+  "result": {
+    "status": "COMPROMISED",
+    "evidence_class": "NO_EVIDENCE",
+    "exit_code": 1,
+    "session_id": "witness-x-div-run1",
+    "event_count": 5,
+    "log_drop_count": 0,
+    "root_hash": "2093aee82934fc8681cf528a808fae5d0183e9eafabf17db4fdc3b0e66f8a77f",
+    "errors": [
+      "CHAIN_SEAL signature invalid \u2014 seal has been tampered with"
+    ],
+    "warnings": [],
+    "canonicalization": "jcs-rfc8785",
+    "pinned": true,
+    "require_seal": false,
+    "strict": false,
+    "seal_present": true,
+    "seal_trusted": false,
+    "timestamp": {
+      "status": "SKIPPED",
+      "imprint_match": false,
+      "verified": false,
+      "claimed_time_utc": null,
+      "detail": null,
+      "errors": []
+    },
+    "timestamp_verified": false,
+    "checks": {
+      "structural": {
+        "status": "PASS",
+        "errors": []
+      },
+      "sequence": {
+        "status": "PASS",
+        "errors": []
+      },
+      "hash_chain": {
+        "status": "PASS",
+        "errors": []
+      },
+      "completeness": {
+        "status": "PASS",
+        "has_session_start": true,
+        "has_session_end": true,
+        "has_chain_seal": true,
+        "log_drop_count": 0,
+        "errors": []
+      },
+      "seal_signature": {
+        "status": "FAIL",
+        "errors": [
+          "CHAIN_SEAL signature invalid \u2014 seal has been tampered with"
+        ],
+        "seal_present": true,
+        "seal_trusted": false
+      },
+      "session_signatures": {
+        "status": "SKIPPED",
+        "errors": []
+      },
+      "rfc3161_timestamp": {
+        "status": "SKIPPED",
+        "errors": [],
+        "timestamp_utc": null,
+        "detail": null
+      }
+    },
+    "verifier_version": "2.0.0"
+  },
+  "stderr": null
+}

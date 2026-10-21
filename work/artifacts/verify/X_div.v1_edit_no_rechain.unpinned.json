@@ -1,0 +1,76 @@
+{
+  "cli": "sasana verify X_div.v1_edit_no_rechain.jsonl --json",
+  "exit_code": 1,
+  "result": {
+    "status": "COMPROMISED",
+    "evidence_class": "NO_EVIDENCE",
+    "exit_code": 1,
+    "session_id": "witness-x-div-run1",
+    "event_count": 5,
+    "log_drop_count": 0,
+    "root_hash": "9a92109627874a59f363ea7ff5a297a324106a54b9e4c7f1b812c62ff8c056a8",
+    "errors": [
+      "seq=4 (SESSION_END): event_hash mismatch"
+    ],
+    "warnings": [
+      "seal not verified against a trusted key; anyone can produce this (pass --trust-key with the Archeion public key to verify who sealed it)"
+    ],
+    "canonicalization": "jcs-rfc8785",
+    "pinned": false,
+    "require_seal": false,
+    "strict": false,
+    "seal_present": true,
+    "seal_trusted": false,
+    "timestamp": {
+      "status": "SKIPPED",
+      "imprint_match": false,
+      "verified": false,
+      "claimed_time_utc": null,
+      "detail": null,
+      "errors": []
+    },
+    "timestamp_verified": false,
+    "checks": {
+      "structural": {
+        "status": "PASS",
+        "errors": []
+      },
+      "sequence": {
+        "status": "PASS",
+        "errors": []
+      },
+      "hash_chain": {
+        "status": "FAIL",
+        "errors": [
+          "seq=4 (SESSION_END): event_hash mismatch"
+        ]
+      },
+      "completeness": {
+        "status": "PASS",
+        "has_session_start": true,
+        "has_session_end": true,
+        "has_chain_seal": true,
+        "log_drop_count": 0,
+        "errors": []
+      },
+      "seal_signature": {
+        "status": "PASS",
+        "errors": [],
+        "seal_present": true,
+        "seal_trusted": false
+      },
+      "session_signatures": {
+        "status": "SKIPPED",
+        "errors": []
+      },
+      "rfc3161_timestamp": {
+        "status": "SKIPPED",
+        "errors": [],
+        "timestamp_utc": null,
+        "detail": null
+      }
+    },
+    "verifier_version": "2.0.0"
+  },
+  "stderr": null
+}

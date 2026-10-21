@@ -1,0 +1,74 @@
+{
+  "cli": "sasana verify X_in.cell3_stripped_rechained.jsonl --json --trust-key <KEY_A>",
+  "exit_code": 1,
+  "result": {
+    "status": "COMPROMISED",
+    "evidence_class": "NO_EVIDENCE",
+    "exit_code": 1,
+    "session_id": "witness-x-in-run1",
+    "event_count": 4,
+    "log_drop_count": 0,
+    "root_hash": "96cef736f4f2c0608906e2a7216c7b4e7538f4e037e9bc45d480b0bd38bad222",
+    "errors": [
+      "pinned key provided but session has no CHAIN_SEAL"
+    ],
+    "warnings": [],
+    "canonicalization": "jcs-rfc8785",
+    "pinned": true,
+    "require_seal": false,
+    "strict": false,
+    "seal_present": false,
+    "seal_trusted": false,
+    "timestamp": {
+      "status": "SKIPPED",
+      "imprint_match": false,
+      "verified": false,
+      "claimed_time_utc": null,
+      "detail": null,
+      "errors": []
+    },
+    "timestamp_verified": false,
+    "checks": {
+      "structural": {
+        "status": "PASS",
+        "errors": []
+      },
+      "sequence": {
+        "status": "PASS",
+        "errors": []
+      },
+      "hash_chain": {
+        "status": "PASS",
+        "errors": []
+      },
+      "completeness": {
+        "status": "PASS",
+        "has_session_start": true,
+        "has_session_end": true,
+        "has_chain_seal": false,
+        "log_drop_count": 0,
+        "errors": []
+      },
+      "seal_signature": {
+        "status": "FAIL",
+        "errors": [
+          "pinned key provided but session has no CHAIN_SEAL"
+        ],
+        "seal_present": false,
+        "seal_trusted": false
+      },
+      "session_signatures": {
+        "status": "SKIPPED",
+        "errors": []
+      },
+      "rfc3161_timestamp": {
+        "status": "SKIPPED",
+        "errors": [],
+        "timestamp_utc": null,
+        "detail": null
+      }
+    },
+    "verifier_version": "2.0.0"
+  },
+  "stderr": null
+}

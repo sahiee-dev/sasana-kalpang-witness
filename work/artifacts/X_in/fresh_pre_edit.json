@@ -1,0 +1,14 @@
+{
+  "http": 200,
+  "read_at_local": "2026-10-21T15:52:21.832Z",
+  "comment_id": 6320212405,
+  "node_id": "IC_kwDOVSafZM8AAAABeLbJtQ",
+  "issue_url": "https://api.github.com/repos/sahiee-dev/kalpang-fixture/issues/1",
+  "body_sha256": "0093755fdc4d2f1b8b44249ad871095b9bd708973328423be58deb301478244d",
+  "body_length": 77,
+  "created_at": "2026-10-21T15:51:01Z",
+  "updated_at": "2026-10-21T15:51:01Z",
+  "author_association": "OWNER",
+  "expected_body_sha256": "0093755fdc4d2f1b8b44249ad871095b9bd708973328423be58deb301478244d",
+  "classification": "IN-BOUNDS"
+}

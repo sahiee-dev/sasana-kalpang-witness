@@ -1,0 +1,14 @@
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "add_issue_comment",
+    "arguments": {
+      "owner": "sahiee-dev",
+      "repo": "kalpang-fixture",
+      "issue_number": 1,
+      "body_sha256": "817cfc5ef27cc87510ae880581688d7575188cc72fefaa2fa9c4413bdd2cf612",
+      "body_length": 78
+    }
+  }
+}

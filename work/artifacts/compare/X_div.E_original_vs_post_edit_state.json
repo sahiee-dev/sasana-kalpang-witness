@@ -1,0 +1,12 @@
+{
+  "log": "session_sealed.original.jsonl",
+  "fresh_read": "fresh_post_edit.json",
+  "record_claims": "DIVERGENT",
+  "fresh_classification": "IN-BOUNDS",
+  "flagged": true,
+  "flags": {
+    "F1_body_hash_changed": "sealed e5208ae8ee66.. vs fresh 817cfc5ef27c..",
+    "F2_updated_at_changed": "sealed 2026-10-21T15:51:10Z vs fresh 2026-10-21T15:54:13Z",
+    "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS"
+  }
+}

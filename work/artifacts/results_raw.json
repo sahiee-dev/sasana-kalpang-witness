@@ -1,0 +1,516 @@
+{
+  "build": [
+    {
+      "label": "X_in",
+      "variant": "original",
+      "file": "session_sealed.original.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "session_sealed.original.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": false,
+        "flags": {}
+      }
+    },
+    {
+      "label": "X_in",
+      "variant": "v1_edit_no_rechain",
+      "file": "X_in.v1_edit_no_rechain.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=4 (SESSION_END): event_hash mismatch"
+        ]
+      },
+      "unpinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=4 (SESSION_END): event_hash mismatch"
+        ]
+      },
+      "comparator": {
+        "log": "X_in.v1_edit_no_rechain.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+          "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+        }
+      }
+    },
+    {
+      "label": "X_in",
+      "variant": "v2_rechain_keep_seal",
+      "file": "X_in.v2_rechain_keep_seal.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "CHAIN_SEAL signature invalid \u2014 seal has been tampered with"
+        ]
+      },
+      "unpinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "CHAIN_SEAL signature invalid \u2014 seal has been tampered with"
+        ]
+      },
+      "comparator": {
+        "log": "X_in.v2_rechain_keep_seal.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+          "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+        }
+      }
+    },
+    {
+      "label": "X_in",
+      "variant": "v2b_rechain_seal_untouched",
+      "file": "X_in.v2b_rechain_seal_untouched.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=5: prev_hash chain broken",
+          "CHAIN_SEAL session_hash does not match the preceding event's event_hash (seal says bc375bdcd6b881fa\u2026, chain head is 96cef736f4f2c060\u2026)"
+        ]
+      },
+      "unpinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=5: prev_hash chain broken",
+          "CHAIN_SEAL session_hash does not match the preceding event's event_hash (seal says bc375bdcd6b881fa\u2026, chain head is 96cef736f4f2c060\u2026)"
+        ]
+      },
+      "comparator": {
+        "log": "X_in.v2b_rechain_seal_untouched.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+          "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+        }
+      }
+    },
+    {
+      "label": "X_in",
+      "variant": "cell3_stripped_rechained",
+      "file": "X_in.cell3_stripped_rechained.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "pinned key provided but session has no CHAIN_SEAL"
+        ]
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "NON_AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_in.cell3_stripped_rechained.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+          "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+        }
+      }
+    },
+    {
+      "label": "X_in",
+      "variant": "v3_reseal_attacker_key",
+      "file": "X_in.v3_reseal_attacker_key.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "CHAIN_SEAL signed by untrusted key \u2014 expected RrZaCSsDx0/uzUUm\u2026, got x6MebvbdbZlcYNIZ\u2026"
+        ]
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_in.v3_reseal_attacker_key.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+          "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+        }
+      }
+    },
+    {
+      "label": "X_in",
+      "variant": "a8_rewrite_genuine_reseal",
+      "file": "X_in.a8_rewrite_genuine_reseal.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_in.a8_rewrite_genuine_reseal.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS",
+          "F5_record_internally_inconsistent": "observation hash implies IN-BOUNDS; record claims DIVERGENT"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "original",
+      "file": "session_sealed.original.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "session_sealed.original.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "DIVERGENT",
+        "flagged": false,
+        "flags": {}
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "v1_edit_no_rechain",
+      "file": "X_div.v1_edit_no_rechain.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=4 (SESSION_END): event_hash mismatch"
+        ]
+      },
+      "unpinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=4 (SESSION_END): event_hash mismatch"
+        ]
+      },
+      "comparator": {
+        "log": "X_div.v1_edit_no_rechain.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "DIVERGENT",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "v2_rechain_keep_seal",
+      "file": "X_div.v2_rechain_keep_seal.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "CHAIN_SEAL signature invalid \u2014 seal has been tampered with"
+        ]
+      },
+      "unpinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "CHAIN_SEAL signature invalid \u2014 seal has been tampered with"
+        ]
+      },
+      "comparator": {
+        "log": "X_div.v2_rechain_keep_seal.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "DIVERGENT",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "v2b_rechain_seal_untouched",
+      "file": "X_div.v2b_rechain_seal_untouched.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=5: prev_hash chain broken",
+          "CHAIN_SEAL session_hash does not match the preceding event's event_hash (seal says 67512dc1d4ee339c\u2026, chain head is f28c01d794f3ec5d\u2026)"
+        ]
+      },
+      "unpinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "seq=5: prev_hash chain broken",
+          "CHAIN_SEAL session_hash does not match the preceding event's event_hash (seal says 67512dc1d4ee339c\u2026, chain head is f28c01d794f3ec5d\u2026)"
+        ]
+      },
+      "comparator": {
+        "log": "X_div.v2b_rechain_seal_untouched.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "DIVERGENT",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "cell3_stripped_rechained",
+      "file": "X_div.cell3_stripped_rechained.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "pinned key provided but session has no CHAIN_SEAL"
+        ]
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "NON_AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_div.cell3_stripped_rechained.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "DIVERGENT",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "v3_reseal_attacker_key",
+      "file": "X_div.v3_reseal_attacker_key.jsonl",
+      "pinned": {
+        "status": "COMPROMISED",
+        "evidence_class": "NO_EVIDENCE",
+        "exit_code": 1,
+        "errors": [
+          "CHAIN_SEAL signed by untrusted key \u2014 expected RrZaCSsDx0/uzUUm\u2026, got x6MebvbdbZlcYNIZ\u2026"
+        ]
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_div.v3_reseal_attacker_key.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "DIVERGENT",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "a8_rewrite_genuine_reseal",
+      "file": "X_div.a8_rewrite_genuine_reseal.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_div.a8_rewrite_genuine_reseal.jsonl",
+        "fresh_read": "fresh_pre_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "DIVERGENT",
+        "flagged": true,
+        "flags": {
+          "F4_claim_vs_fresh_classification": "record claims IN-BOUNDS; fresh read classifies DIVERGENT",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    }
+  ],
+  "post_edit": [
+    {
+      "label": "X_div",
+      "variant": "E_original_vs_post_edit_state",
+      "file": "session_sealed.original.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "session_sealed.original.jsonl",
+        "fresh_read": "fresh_post_edit.json",
+        "record_claims": "DIVERGENT",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F1_body_hash_changed": "sealed e5208ae8ee66.. vs fresh 817cfc5ef27c..",
+          "F2_updated_at_changed": "sealed 2026-10-21T15:51:10Z vs fresh 2026-10-21T15:54:13Z",
+          "F4_claim_vs_fresh_classification": "record claims DIVERGENT; fresh read classifies IN-BOUNDS"
+        }
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "A8E_full_rewrite_genuine_reseal",
+      "file": "X_div.a8e_full_rewrite_genuine_reseal.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_div.a8e_full_rewrite_genuine_reseal.jsonl",
+        "fresh_read": "fresh_post_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": false,
+        "flags": {}
+      }
+    },
+    {
+      "label": "X_div",
+      "variant": "A8E_classification_only_rewrite",
+      "file": "X_div.a8_rewrite_genuine_reseal.jsonl",
+      "pinned": {
+        "status": "INTACT",
+        "evidence_class": "AUTHORITATIVE_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "unpinned": {
+        "status": "INTACT",
+        "evidence_class": "SELF_SEALED_EVIDENCE",
+        "exit_code": 0,
+        "errors": []
+      },
+      "comparator": {
+        "log": "X_div.a8_rewrite_genuine_reseal.jsonl",
+        "fresh_read": "fresh_post_edit.json",
+        "record_claims": "IN-BOUNDS",
+        "fresh_classification": "IN-BOUNDS",
+        "flagged": true,
+        "flags": {
+          "F1_body_hash_changed": "sealed e5208ae8ee66.. vs fresh 817cfc5ef27c..",
+          "F2_updated_at_changed": "sealed 2026-10-21T15:51:10Z vs fresh 2026-10-21T15:54:13Z",
+          "F5_record_internally_inconsistent": "observation hash implies DIVERGENT; record claims IN-BOUNDS"
+        }
+      }
+    }
+  ],
+  "keys": {
+    "archeion_A_legit_pubkey": "RrZaCSsDx0/uzUUmgdhs6Gp+61fz2plhXH6RC4HK/PM=",
+    "archeion_B_attacker_pubkey": "x6MebvbdbZlcYNIZHUj7Z/9sWkXc/QsesyDLWdFKHCY="
+  },
+  "sasana_version": "2.0.2"
+}

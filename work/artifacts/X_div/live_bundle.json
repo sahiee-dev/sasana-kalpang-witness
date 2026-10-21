@@ -1,0 +1,41 @@
+{
+  "label": "X_div",
+  "target": "sahiee-dev/kalpang-fixture#1",
+  "mcp_server": {
+    "image": "ghcr.io/github/github-mcp-server:v1.12.2@sha256:a44e77b9c9003ed0e228716d118aa4ce9f3418dce30fe2340c71553164bd96f0",
+    "toolset": "issues"
+  },
+  "authorization": {
+    "decision": "ALLOW",
+    "canonical_request_sha256": "89538d4eee77c7d7b053a4bee52ef0f6800e7a5ec8547a207d5dc4a1313214c8"
+  },
+  "authorized_body_sha256": "817cfc5ef27cc87510ae880581688d7575188cc72fefaa2fa9c4413bdd2cf612",
+  "mcp": {
+    "transport_body_sha256": "e5208ae8ee66c9c6a434aa7a24c6b2d2d8a7ed8025c36167a64d9c20f9324bb7",
+    "is_error": false
+  },
+  "rest_ids_before": [
+    6320212405
+  ],
+  "rest_ids_after": [
+    6320212405,
+    6320216354
+  ],
+  "observation": {
+    "comment_id": 6320216354,
+    "node_id": "IC_kwDOVSafZM8AAAABeLbZIg",
+    "issue_url": "https://api.github.com/repos/sahiee-dev/kalpang-fixture/issues/1",
+    "body_sha256": "e5208ae8ee66c9c6a434aa7a24c6b2d2d8a7ed8025c36167a64d9c20f9324bb7",
+    "body_length": 108,
+    "created_at": "2026-10-21T15:51:10Z",
+    "updated_at": "2026-10-21T15:51:10Z"
+  },
+  "kalpang_report": {
+    "canonical_request_sha256": "89538d4eee77c7d7b053a4bee52ef0f6800e7a5ec8547a207d5dc4a1313214c8",
+    "execution_performed": true,
+    "mcp_call_status": "RESPONSE RECEIVED",
+    "comparison_result": "DIVERGENT",
+    "final_status": "DIVERGENT / FAIL",
+    "observed_comment_id": 6320216354
+  }
+}
