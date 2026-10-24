@@ -29,7 +29,7 @@ None. Every cell matched its expected status; cells with "exact status unknown" 
 
 ## License status of KALPANG (checked 2026-10-21, commit `de79f03`)
 
-The KALPANG repository at that commit has no `LICENSE`/`COPYING`/`NOTICE` file, no `license` field in `package.json`, and no license statement in its README. No license is granted by the repository itself. A diff of the retarget would have reproduced context lines from KALPANG's `src/github-comment-binding.js`, so on 2026-10-21 the diff files were deleted from this repository and replaced by a one-sentence instruction (`results/kalpang_retarget.md`): change `GITHUB_REPOSITORY_OWNER` and `GITHUB_REPOSITORY_NAME` in that file (at `de79f03`) to your own fixture repo. No KALPANG source is included in this repository. The repository's history is a single commit, so no earlier commit containing that diff is published.
+The KALPANG repository at that commit has no `LICENSE`/`COPYING`/`NOTICE` file, no `license` field in `package.json`, and no license statement in its README. No license is granted by the repository itself. A diff of the retarget would have reproduced context lines from KALPANG's `src/github-comment-binding.js`, so on 2026-10-21 the diff files were deleted from this repository and replaced by a one-sentence instruction (`results/kalpang_retarget.md`): change `GITHUB_REPOSITORY_OWNER` and `GITHUB_REPOSITORY_NAME` in that file (at `de79f03`) to your own fixture repo. No KALPANG source is included in this repository. No commit in this repository contains that diff.
 
 ## Harness edited after the run (2026-10-21)
 
