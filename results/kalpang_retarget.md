@@ -1,1 +1,1 @@
-To reproduce, change `GITHUB_REPOSITORY_OWNER` and `GITHUB_REPOSITORY_NAME` in KALPANG's `src/github-comment-binding.js` (at `de79f03`) to your own fixture repo.
+To reproduce, change `GITHUB_REPOSITORY_OWNER` and `GITHUB_REPOSITORY_NAME` in KALPANG's `src/github-comment-binding.js` (unchanged between `de79f03`, used for the live runs, and `16a6fc2`) to your own fixture repo.
