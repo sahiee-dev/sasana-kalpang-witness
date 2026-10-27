@@ -6,7 +6,7 @@ A **demonstration, one run per cell, not a proof.** It asks which combination of
 
 Gokul Jayaprakash: KALPANG Effect Boundary Lab (authorization binding, the controlled GitHub executor and a separate REST read-back, https://github.com/gokuljayaprakash8/kalpang-effect-boundary-lab); the expected results and pass criteria for all cells; the A8+E cell; review of the results.
 
-Sahir: Sasana (sealing and verification, https://github.com/sahiee-dev/Sasana); the initial 2×2 proposal; cells 2, 3, E and A8; the witness-independence column and the edit-history purge test; the harness, tamper generator, sealed-vs-fresh comparator and edit-history probe; all runs and the analysis.
+Sahir: Sasana (sealing and verification, https://github.com/sahiee-dev/Sasana); the initial 2×2 proposal; cells 2, 3, E and A8; the witness-independence column and the edit-history purge test; the harness, tamper generator, sealed-vs-fresh comparator and edit-history probe; all runs and the analysis; found the macOS test failure that led to the sandbox fix.
 
 Run details: Sasana 2.0.2 (PyPI). KALPANG at de79f03 for the live runs; its test suite was re-run at 16a6fc2 (18/18), and the GitHub-path files are identical at both commits. One run per cell, a demonstration, not a proof. GitHub behaviour observed 2026-10-21.
 
